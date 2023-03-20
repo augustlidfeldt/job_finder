@@ -13,17 +13,26 @@
 }
 
 .sidebar {
-    background-color: rgb(240, 240, 240);
-    height: 100%;
-    min-width: 60px;
+    
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: width 0.5s ease-out;
+
+    transition: width 0.5s ease;
+    background-color: rgb(11, 43, 33);
+    padding: 0;
+    margin: 20px;
 }
 
 .open {
+    background-color: rgb(240, 240, 240);
     width: 280px;
+    height: 100%;
+    border-radius: 0%;
+    margin: 0px;
 }
 
 @keyframes openSide{

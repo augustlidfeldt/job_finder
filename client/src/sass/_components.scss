@@ -17,11 +17,13 @@ nav {
             width: 100px;
             padding: 20px;
             background-color:  base.$color-primary-2;
+            color: base.$color-primary-1;
         }
     }
 
     li:hover {
         background-color: white;
+        color: black;
     }
 }
 
@@ -30,8 +32,14 @@ nav {
     background-color: base.$color-primary-3;
     color: white;
 
+    h1 {
+        font-size: 3em;
+    }
+
     h4 {
-        color:base.$color-primary-1
+        color:base.$color-primary-1;
+        font-weight: 300;
+        font-size: 1.2em;
     }
 }
 

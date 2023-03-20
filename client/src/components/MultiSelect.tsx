@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { useState, ChangeEvent } from "react";
 import Select, { ActionMeta, MultiValue } from "react-select";
 
@@ -11,7 +12,14 @@ export const MultiSelect: React.FC<Props> = ({ selectorProps }: Props) => {
   });
 
   return (
-    <div className="multiselector">
+    <div className="multiselector" style={{ width: "240px" }}>
+      <Typography
+        style={{ padding: "10px 20px", alignSelf: "start" }}
+        variant="h6"
+      >
+        {`${selectorProps.name}`}
+      </Typography>
+
       <Select
         className="selector"
         name={selectorProps.name}

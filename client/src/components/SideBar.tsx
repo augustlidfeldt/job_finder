@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import FunnelIcon from "@mui/icons-material/FilterAlt";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { MultiSelect } from "./MultiSelect";
+import { Typography } from "@mui/material";
 
 const iconStyle = {
   margin: "20px",
   scale: "150%",
-  opacity: "30%",
+  opacity: "90%",
   borderRadius: "50%",
-  border: "1px black solid",
+  color: "white",
+  padding: 0,
 };
 
 type Props = {
@@ -17,6 +19,7 @@ type Props = {
 
 const selectorProps: Props = {
   options: ["Finance", "Food Processing"],
+  name: "Industry",
 };
 
 function SideBar() {
@@ -35,27 +38,24 @@ function SideBar() {
 
   return (
     <div>
-      {open ? (
-        <div className="sidebar closed">
-          <FunnelIcon
-            style={iconStyle}
-            onClick={() => setOpen(false)}
-          ></FunnelIcon>
-        </div>
-      ) : (
-        <div className="sidebar open">
-          <KeyboardArrowLeftIcon
-            style={{ ...iconStyle, alignSelf: "end" }}
-            onClick={() => setOpen(true)}
-          ></KeyboardArrowLeftIcon>
-          <p>Select country</p>
+      <div className={`sidebar ${open ? "open" : "closed"}`}>
+        {open ? (
+          <>
+            <KeyboardArrowLeftIcon
+              style={{ ...iconStyle, alignSelf: "end" }}
+              onClick={() => setOpen(false)}
+            />
 
-          <MultiSelect
-            name="industry"
-            selectorProps={selectorProps}
-          ></MultiSelect>
-        </div>
-      )}
+            <MultiSelect
+              name="industry"
+              selectorProps={selectorProps}
+              style={{ width: "240px" }}
+            />
+          </>
+        ) : (
+          <FunnelIcon style={iconStyle} onClick={() => setOpen(true)} />
+        )}
+      </div>
     </div>
   );
 }
