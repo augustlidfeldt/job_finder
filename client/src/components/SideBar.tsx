@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import FunnelIcon from "@mui/icons-material/FilterAlt";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { MultiSelect } from "./MultiSelect";
-import RangeSlider from "./RangeSlider";
 
 const iconStyle = {
   margin: "20px",
@@ -55,7 +54,6 @@ function SideBar() {
             name="industry"
             selectorProps={selectorProps}
           ></MultiSelect>
-          <RangeSlider></RangeSlider>
         </div>
       )}
     </div>
